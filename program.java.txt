@@ -1,0 +1,53 @@
+package sai;
+
+import java.util.Scanner;
+
+public class AreaofTriangle {
+
+	double a, b, c,  s, Area;
+		
+		public void TriangleArea() { 
+		
+			s = (a + b + c)/2; 
+			Area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+
+			System.out.format("The Semi Perimeter of Traiangle = %.2f\n",s);
+			System.out.format("The Area of triangle = %.2f\n",Area);
+		}
+		
+		public double AreaofaTriangle( double a, double b, double c ) {
+			double s;
+			s = (a + b + c)/2;
+			Area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+			return Area;
+		} 
+		
+   private static Scanner sc;
+	public static void main(String[] args) {
+		double x, y, z, Area;
+		sc = new Scanner(System.in);
+		
+		System.out.println("Please Enter Three sides of triangle: ");
+		x = sc.nextDouble();
+		y = sc.nextDouble();
+		z = sc.nextDouble();
+		if (x+y<=z) {
+			System.out.println("ERROR: Please enter the proper side values of a triangle");
+			return;
+		}
+		AreaofTriangle at = new AreaofTriangle();
+		at.a = x;
+		at.b = y;
+		at.c = z;
+		at.TriangleArea();
+		
+		Area = at.AreaofaTriangle(x, y, z);
+		System.out.format("Second Method: The Area of triangle = %.2f\n", Area);
+        	  
+          }
+          }
+
+        	  
+          
+
+
